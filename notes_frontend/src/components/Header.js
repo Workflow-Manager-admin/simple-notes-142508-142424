@@ -1,11 +1,16 @@
 import React from 'react';
-import logo from '../assets/logo.jpeg';
 
-const Header = () => {
+const Header = ({ onSearch, searchTerm }) => {
   return (
     <header className="header">
-      <img src={logo} alt="App Logo" className="header-logo" />
-      <h1>Simple Notes</h1>
+      <div className="search-bar">
+        <input
+          type="text"
+          placeholder="Filter notes..."
+          value={searchTerm}
+          onChange={onSearch}
+        />
+      </div>
     </header>
   );
 };
