@@ -4,6 +4,7 @@ import Header from './components/Header';
 import NotesList from './components/NotesList';
 import CreateNote from './components/CreateNote';
 import './App.css';
+import backgroundImage from './assets/old_notepad.jpeg';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -43,16 +44,23 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <Header onSearch={handleSearch} searchTerm={searchTerm} />
-      <div className="create-note-area">
-        <CreateNote onAdd={addNote} />
-      </div>
-      <div className="notes-grid">
-        <NotesList
-          notes={filteredNotes}
-          onDelete={deleteNote}
-        />
+    <div className="app-container">
+      <div className="notepad-page">
+        <div className="spiral-container">
+          <div className="spiral"></div>
+        </div>
+        <Header onSearch={handleSearch} searchTerm={searchTerm} />
+        <div className="main-content">
+          <div className="create-note-area">
+            <CreateNote onAdd={addNote} />
+          </div>
+          <div className="notes-grid">
+            <NotesList
+              notes={filteredNotes}
+              onDelete={deleteNote}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
