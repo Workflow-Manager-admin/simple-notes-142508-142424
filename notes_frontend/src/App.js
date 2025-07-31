@@ -4,6 +4,7 @@ import Header from './components/Header';
 import NotesList from './components/NotesList';
 import CreateNote from './components/CreateNote';
 import './App.css';
+import backgroundImage from './assets/old_notepad.jpeg';
 
 function App() {
   const [notes, setNotes] = useState([]);
